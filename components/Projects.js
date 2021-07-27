@@ -1,6 +1,10 @@
 import { RichText } from '@graphcms/rich-text-react-renderer';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import OpenInNewIcon from '@material-ui/icons/OpenInNew';
+ import {
+  AiFillGithub,
+ } from 'react-icons/ai';
+ import {
+  MdOpenInNew
+ } from 'react-icons/md';
 
 export const Projects = ({ projects, content }) => {
   const {header, subheader} = content;
@@ -57,13 +61,17 @@ export const Projects = ({ projects, content }) => {
                     <br />
 
                     <div>
-                      <a target='_blank' rel='noreferrer' href={git} className=''>
-                        <GitHubIcon />
-                      </a>
+                      <span className='float-left text-2xl pr-2'>
+                        <a target='_blank' rel='noreferrer' href={git} className=''>
+                          <AiFillGithub />
+                        </a>
+                      </span>
                       &nbsp;&nbsp;
-                      <a target='_blank' rel='noreferrer' href={url} className=''>
-                        <OpenInNewIcon />
-                      </a>
+                      <span className='float-left text-2xl pr-2'>
+                        <a target='_blank' rel='noreferrer' href={url} className=''>
+                          <MdOpenInNew />
+                        </a>
+                      </span>
                     </div>
                   </div>
 

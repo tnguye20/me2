@@ -1,9 +1,16 @@
 import { RichText } from '@graphcms/rich-text-react-renderer';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import InstagramIcon from '@material-ui/icons/Instagram';
-import LocalCafeIcon from '@material-ui/icons/LocalCafe';
-import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
+
+import { 
+  FaPatreon,
+ } from 'react-icons/fa';
+ import {
+  AiFillGithub,
+  AiOutlineInstagram,
+  AiFillLinkedin,
+ } from 'react-icons/ai';
+ import {
+  BiCoffeeTogo
+ } from 'react-icons/bi';
 
 export const Contact = ({ content, socials }) => {
   const {header, subheader} = content;
@@ -16,27 +23,27 @@ export const Contact = ({ content, socials }) => {
       <div className='socials flex flex-row justify-center space-x-9'>
         <div>
           <a target='_blank' rel='noreferrer' href={`${socials.linkedin.url}`} className=''>
-            <LinkedInIcon /> 
+            <AiFillLinkedin className="text-3xl"/> 
           </a>
         </div>
         <div>
           <a target='_blank' rel='noreferrer' href={`${socials.github.url}`} className=''>
-            <GitHubIcon /> 
+            <AiFillGithub className="text-3xl"/> 
           </a>
         </div>
         <div>
           <a target='_blank' rel='noreferrer' href={`${socials.instagram.url}`} className=''>
-            <InstagramIcon /> 
+            <AiOutlineInstagram className="text-3xl"/> 
           </a>
         </div>
         <div>
           <a target='_blank' rel='noreferrer' href={`${socials.patreon.url}`} className=''>
-            <PeopleAltIcon /> 
+            <FaPatreon className="text-3xl"/>
           </a>
         </div>
         <div>
           <a target='_blank' rel='noreferrer' href={`${socials.coffee.url}`} className=''>
-            <LocalCafeIcon /> 
+            <BiCoffeeTogo className="text-3xl"/> 
           </a>
         </div>
       </div>
