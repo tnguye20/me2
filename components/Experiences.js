@@ -13,7 +13,7 @@ export const Experiences = ({ skills }) => {
               <div className='tech-holder'>
                 <h2 className='font-bold text-xl leading-relaxed text-goma-peach-3'>Techonologies I use:</h2>
                 <p className='font-normal text-sm'>
-                  {tech.join(', ')}
+                  { tech.join(', ') }
                 </p>
               </div>
             </div>
