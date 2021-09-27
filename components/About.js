@@ -8,7 +8,7 @@ export const About = ({ content }) => {
         <h1 className='font-extrabold md:text-5xl text-2xl leading-relaxed'>
           { header }
           </h1>
-        <div className='mb-12 text-lg font-normal xl:px-32'>
+        <div className='mb-12 text-lg font-normal text-justify xl:px-32'>
           <RichText content={ subheader.json } />
         </div>
       </div>
