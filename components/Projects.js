@@ -54,7 +54,10 @@ export const Projects = ({ projects, content }) => {
                     <p>{description}</p>
                     <div>
                       {
-                        tech.map((t, index) => <span key={index} className='p-1 font-light text-sm inline-block'>{t}</span>)
+                        tech.map((t, index) => {
+                          const _t = t.replace("__", ".").replace("_", " ");
+                          return <span key={index} className='p-1 font-light text-sm inline-block'>{_t}</span>
+                        })
                       }
                     </div>
 

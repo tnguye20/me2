@@ -14,14 +14,15 @@ import {
   getProjects,
   getParagraphs,
   getSocials,
-  getMetas
+  getMetas,
+  getResume
 } from '../lib/cms';
 
-export default function Index({skills, projects, paragraphs, socials, metas}) {
+export default function Index({skills, projects, paragraphs, socials, metas, resume}) {
   return (
     <>
       <Meta meta={metas[0]}/>
-      <Nav />
+      <Nav resume={resume}/>
       <Hero content={paragraphs['hero']}/>
       <About content={paragraphs['about']}/>
       <Experiences skills={skills}/>
@@ -34,12 +35,13 @@ export default function Index({skills, projects, paragraphs, socials, metas}) {
 
 export async function getStaticProps({ preview = false }) {
   try {
-    const [skills, projects, paragraphs, socials, metas] = await Promise.all([
+    const [skills, projects, paragraphs, socials, metas, resume] = await Promise.all([
       getSkills({ preview }),
       getProjects({ preview }),
       getParagraphs({preview}),
       getSocials({preview}),
-      getMetas({preview})
+      getMetas({preview}),
+      getResume({preview})
     ]);
 
     const paragraphsDict = {};
@@ -53,7 +55,8 @@ export async function getStaticProps({ preview = false }) {
         projects,
         paragraphs: paragraphsDict,
         socials: socialsDict,
-        metas
+        metas,
+        resume
       },
       revalidate: 10
     };
@@ -66,7 +69,8 @@ export async function getStaticProps({ preview = false }) {
         projects: [],
         paragraphs: {},
         socials: {},
-        metas: []
+        metas: [],
+        resume: "https://tnguye20.w3.uvm.edu/personal/ThangNguyen_Resume.pdf"
       }
     };
   }
