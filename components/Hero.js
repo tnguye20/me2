@@ -9,7 +9,16 @@ export const Hero = ({ content }) => {
         <div className='mb-12 font-normal text-lg'>
           <RichText content={ subheader.json } />
         </div>
-        <img className='avatar border-2 border-gray-300 rounded-full m-auto block' alt={`${media[0].name}`} src={media[0].url}/>
+        <div className="flip-card m-auto avatar">
+          <div className="flip-card-inner">
+            <div className="flip-card-front absolute">
+              <img className='avatar border-2 border-gray-300 rounded-full m-auto block' alt={`${media[0].name}`} src={media[0].url}/>
+            </div>
+            <div className="flip-card-back absolute">
+              <img className='avatar border-2 border-gray-300 rounded-full m-auto block' alt={`${media[2].name}`} src={media[2].url}/>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div className='h-max relative mt-12 xl:absolute w-full bottom-0'>
