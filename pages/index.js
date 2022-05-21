@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import {
   Meta,
   Hero,
@@ -18,7 +20,26 @@ import {
   getResume
 } from '../lib/cms';
 
+import * as ga from '../lib/ga';
+
 export default function Index({skills, projects, paragraphs, socials, metas, resume}) {
+  const router = useRouter()
+
+  useEffect(() => {
+    const handleRouteChange = (url) => {
+      ga.pageview(url)
+    }
+    //When the component is mounted, subscribe to router changes
+    //and log those page views
+    router.events.on('routeChangeComplete', handleRouteChange)
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange)
+    }
+  }, [router.events])
+
   return (
     <>
       <Meta meta={metas[0]}/>
