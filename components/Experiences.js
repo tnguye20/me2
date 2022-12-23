@@ -7,7 +7,7 @@ export const Experiences = ({ skills }) => {
           return (
             <div key={index} className='flex-1 border border-gray-100 p-9 lg:p-11 hover:shadow-lg relative'>
               <h2 className='font-extrabold text-2xl leading-relaxed'>{ title }</h2>
-              <p>
+              <p className="">
                 {description}
               </p>
               <div className='tech-holder'>
